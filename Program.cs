@@ -6,6 +6,33 @@ using System.Threading.Tasks;
 
 namespace final_folder
 {
+    //question record
+    public class Question
+    {
+        //  QID (int) | QuestionText (string) | Answer (ucase(string)) | Correct (int) | Incorrect (int)
+
+        //QID
+        public int QID { get; set; }
+
+        //QuestionText
+        public string QuestionText { get; set; }
+
+        //Answer
+        private string answer;
+
+        public string Answer
+        {
+            get { return answer.ToUpper(); }
+            set { answer = value.ToUpper(); }
+        }
+
+        //Correct
+        public int Correct { get; set; }
+
+        //Incorrect
+        public int Incorrect { get; set; }
+    }
+
     class Program
     {
         //create a list of the question class which holds the question objects.
@@ -35,12 +62,12 @@ namespace final_folder
 
             //Write thanks for playing
             Console.WriteLine("");
-            Console.WriteLine("Thanks for playing this game thingy. Press any key to close me.");
+            Console.WriteLine("Thanks for playing this game thingy. Press ENTER to close me.");
             Console.ReadLine();
 
 
         }
-
+        
         public static void PopulateQuestions()
         {
             //  QID (int) | QuestionText (string) | Answer (ucase(string)) | Correct (int) | Incorrect (int)
@@ -147,29 +174,4 @@ namespace final_folder
         }
     }
 
-    public class Question
-    {
-        //  QID (int) | QuestionText (string) | Answer (ucase(string)) | Correct (int) | Incorrect (int)
-
-        //QID
-        public int QID { get; set; }
-
-        //QuestionText
-        public string QuestionText { get; set; }
-
-        //Answer
-        private string answer;
-
-        public string Answer
-        {
-            get { return answer.ToUpper(); }
-            set { answer = value.ToUpper(); }
-        }
-
-        //Correct
-        public int Correct { get; set; }
-
-        //Incorrect
-        public int Incorrect { get; set; }
-    }
 }
