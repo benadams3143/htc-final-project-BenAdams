@@ -8,11 +8,12 @@ namespace final_folder
 {
     class Program
     {
+        //create a list of the question class which holds the question objects.
         public static List<Question> Questions { get; set; }
 
         static void Main(string[] args)
         {
-            //Prepare array
+            //Prepare list of questions
             PopulateQuestions();
 
             //Instructions
@@ -28,7 +29,6 @@ namespace final_folder
                 //Call Question method to current question number
                 AskQuestion(q);
             }
-
 
             //Calculate Results
             CalcResults();
@@ -95,7 +95,7 @@ namespace final_folder
 
         public static void AskQuestion(Question Q)
         {
-            //get array record fields
+            //Use the question record to ask question and check answer
 
             //Ask question
             Console.WriteLine("Question " + Q.QID.ToString());
@@ -104,30 +104,25 @@ namespace final_folder
             //get input
             string input = Console.ReadLine();
 
-            //Check input against array using ucase
+            //Check input against answer using uppercase
             //If statement:
             if (input.ToUpper() == Q.Answer)
             {
-
                 //if correct:
                 //set array correct answer to 1
-                //write they were correct
-                //return
-
                 Q.Correct = 1;
+
+                //write they were correct
                 Console.WriteLine("Yay, you did it!");
                 Console.WriteLine();
             }
-
             else
             {
-
                 //if incorrect:
                 //set array incorrect answer to 1
-                //write they were incorrect
-                //return
-
                 Q.Incorrect = 1;
+
+                //write they were incorrect
                 Console.WriteLine("Wrong answer.");
                 Console.WriteLine();
             }
@@ -136,7 +131,7 @@ namespace final_folder
 
         public static void CalcResults()
         {
-            //Loop through array, show the question number, and correct and incorrect answers and write results.
+            //Loop through list, show the question number, and correct and incorrect answers and write results.
             int ctot = 0;
             int itot = 0;
             foreach (Question q in Questions)
